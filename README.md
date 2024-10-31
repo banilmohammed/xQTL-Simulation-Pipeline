@@ -10,10 +10,12 @@ To get started, you will need a couple things:
 
 1. [bwa-mem2](https://github.com/bwa-mem2/bwa-mem2)
 2. gatk
+
 	a. The easiest option would be to pull the [docker image](https://hub.docker.com/r/broadinstitute/gatk). This also includes other
 tools such as `samtools`. If you are on Hoffman2, use `apptainer`. [apptainer on hoffman](https://www.hoffman2.idre.ucla.edu/Using-H2/Software/Software.html).
 	b. Install manually with instructions from
 [here](https://gatk.broadinstitute.org/hc/en-us/articles/360036194592-Getting-started-with-GATK4).
+
 You will also need to install [samtools](https://github.com/samtools/samtools).
 
 You can then clone this repo, and you should be good to go!
