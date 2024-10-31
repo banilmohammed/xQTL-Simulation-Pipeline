@@ -27,7 +27,7 @@ There is no GPU needed for this pipeline. If you are on Hoffman2, I used these r
 qrsh -pe shared 15 -l h_rt=8:00:00,h_data=2G
 ```
 
-0. Enter the docker/ apptainer container or your local directory containing all code and tools.
+0. Shell into the docker/ apptainer container or your local directory containing all code and tools.
 1. Verify that the `ref/` directory contains the yeast reference fasta and bed
 files.
 2. Edit the path to the `bwa-mem2` executables in the Makefile.
@@ -76,6 +76,8 @@ make output/sac.vcf
 
 This will generate and index the final cohort vcf file from all the gVCFs found
 in the directory of the input paired end reads.
+
+I have included some downsampled paired end sample reads to quickly test this pipeline under `test_data`.
 
 More details on this gatk pipeline can be found
 [here](https://gatk.broadinstitute.org/hc/en-us/articles/360035535932-Germline-short-variant-discovery-SNPs-Indels)
