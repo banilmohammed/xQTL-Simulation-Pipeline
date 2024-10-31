@@ -12,17 +12,22 @@ To get started, you will need a couple things:
 2. gatk
 
 	a. The easiest option would be to pull the [docker image](https://hub.docker.com/r/broadinstitute/gatk). This also includes other
-tools such as `samtools`. If you are on Hoffman2, use `apptainer`. [apptainer on hoffman](https://www.hoffman2.idre.ucla.edu/Using-H2/Software/Software.html).
+tools such as `samtools`. If you are on Hoffman2, use `apptainer`. [apptainer on hoffman](https://www.hoffman2.idre.ucla.edu/Using-H2/Software/Software.html)
 
 	b. Install manually with instructions from
-[here](https://gatk.broadinstitute.org/hc/en-us/articles/360036194592-Getting-started-with-GATK4).
-
-You will also need to install [samtools](https://github.com/samtools/samtools).
+[here](https://gatk.broadinstitute.org/hc/en-us/articles/360036194592-Getting-started-with-GATK4). You will also need to install [samtools](https://github.com/samtools/samtools).
 
 You can then clone this repo, and you should be good to go!
 
 ### Running
 
+There is no GPU needed for this pipeline. If you are on Hoffman2, I used these resources:
+
+```
+qrsh -pe shared 15 -l h_rt=8:00:00,h_data=2G
+```
+
+0. Enter the docker/ apptainer container or your local directory containing all code and tools.
 1. Verify that the `ref/` directory contains the yeast reference fasta and bed
 files.
 2. Edit the path to the `bwa-mem2` executables in the Makefile.
