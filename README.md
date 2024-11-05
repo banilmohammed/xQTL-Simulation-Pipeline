@@ -35,7 +35,7 @@ files.
 
 ```
 make --dry-run <path to paired end reads>.gvcf.idx
-ex. make --dry-run test_data/sub_AVT.gvcf.idx
+ex. make --dry-run test_data/.sub_AVT.gvcf.idx
 ```
 The above command will list out the commands that `make` will run. Verify that
 the paths are correct. The input path to the paired end reads should not
@@ -45,7 +45,7 @@ Once you have verified that the paths are correct you can run:
 
 ```
 make <path to paired end reads>.gvcf.idx
-ex. make test_data/sub_AVT.gvcf.idx
+ex. make test_data/.sub_AVT.gvcf.idx
 ```
 
 This will do the following:
