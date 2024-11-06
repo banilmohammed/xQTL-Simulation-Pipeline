@@ -8,9 +8,11 @@ INPUT_BED=$3
 
 GVCF_FILES=""
 
-for GVCF in "${GVCF_DIR}/*.g.vcf.gz"; do
-	GVCF_FILES=${GVCF_FILES}"-V $GVCF"
+for GVCF in ${GVCF_DIR}/*.g.vcf.gz; do
+	GVCF_FILES=${GVCF_FILES}"-V $GVCF "
 done
+
+echo $GVCF_FILES
 
 gatk GenomicsDBImport \
 	--overwrite-existing-genomicsdb-workspace \

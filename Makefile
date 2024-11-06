@@ -22,13 +22,14 @@ ref/.sace_ref.bwa.idx:
 
 # add readgroups
 %.mapping.RD.bam: %.mapping.bam
-	@echo "Adding readgroups to $<"
+	@sample_name=$(shell basename $< .mapping.bam); \
+	echo "Adding readgroups to $< with sample name: $$sample_name"; \
 	gatk AddOrReplaceReadGroups -I $< -O $@ \
-	--RGID SampleName \
-	--RGLB SampleName \
-	--RGPL ILLUMINA \
-	--RGPU SampleName \
-	--RGSM SampleName
+		--RGID $$sample_name \
+		--RGLB $$sample_name \
+		--RGPL ILLUMINA \
+		--RGPU $$sample_name \
+		--RGSM $$sample_name
 
 # index aligned bam file
 %.mapping.RD.bam.bai: %.mapping.RD.bam
@@ -60,7 +61,7 @@ ref/.sace_ref.dict: ref/sace_ref.fasta.gz
 # consolidate and generate GenomicsDB
 output/.genomedb:
 	@echo "Generating GenomicsDB"
-	bash gen_genomedb.sh output/ test_data/ ref/sace_ref.bed
+	bash gen_genomedb.sh output test_data/test_2 ref/sace_ref.bed
 	@touch $@
 
 # generate cohort VCF
