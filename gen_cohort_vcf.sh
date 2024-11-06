@@ -8,8 +8,6 @@ OUTPUT_DIR=$(dirname ${OUTPUT_VCF})
 INPUT_GENDB=$3
 REF_FASTA=$4
 
-echo "test"
-
 if [ ${SPLIT_CHROM} -eq 0 ]; then
         echo "Not splitting by chromosome"
 	gatk GenotypeGVCFs \
