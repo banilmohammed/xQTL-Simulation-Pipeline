@@ -12,8 +12,6 @@ for GVCF in ${GVCF_DIR}/*.g.vcf.gz; do
 	GVCF_FILES=${GVCF_FILES}"-V $GVCF "
 done
 
-echo $GVCF_FILES
-
 gatk GenomicsDBImport \
 	--overwrite-existing-genomicsdb-workspace \
 	--batch-size 200 \
